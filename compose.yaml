@@ -1,0 +1,5 @@
+services:
+  splatgrade:
+    build: .
+    ports:
+      - "8090:8090"

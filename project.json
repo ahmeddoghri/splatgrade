@@ -1,0 +1,12 @@
+{
+  "name": "splatgrade",
+  "tagline": "3D Gaussian Splat artifact quality gate",
+  "headline": "Photoreal from one view can still be broken in 3D.",
+  "summary": "Inspect Gaussian PLY scenes for giant primitives, duplicates, low opacity, floaters, invalid ranges, and unstable bounds.",
+  "accent": "#65e6d7",
+  "topics": "gaussian-splatting,3dgs,computer-vision,ply,quality-control,3d-reconstruction",
+  "sources": [
+    ["AAA-Gaussians, ICCV 2025", "https://doi.org/10.1109/ICCV51701.2025.02567"],
+    ["3DGS-QA", "https://ojs.aaai.org/index.php/AAAI/article/download/37928/41890"]
+  ]
+}

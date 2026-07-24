@@ -4,6 +4,8 @@
 
 Inspect Gaussian PLY scenes for giant primitives, duplicates, low opacity, floaters, invalid ranges, and unstable bounds.
 
+![splatgrade cover](demo/cover.png)
+
 ![splatgrade workbench](demo/dashboard.png)
 
 ## What ships

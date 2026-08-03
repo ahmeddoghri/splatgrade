@@ -42,7 +42,7 @@ def parse_ply(path: str | Path) -> list[dict]:
         if parts[:2] == ["element", "vertex"]:
             vertex_count = int(parts[2])
             in_vertex = True
-        elif parts and parts[0] == "element" and parts[1] != "vertex":
+        elif len(parts) >= 2 and parts[0] == "element" and parts[1] != "vertex":
             in_vertex = False
         elif in_vertex and parts and parts[0] == "property":
             properties.append(parts[-1])
@@ -57,6 +57,8 @@ def parse_ply(path: str | Path) -> list[dict]:
     result = []
     for line in lines[end_header + 1 : end_header + 1 + vertex_count]:
         values = [float(value) for value in line.split()]
+        if len(values) < len(properties):
+            raise ValueError("PLY vertex row has fewer fields than declared properties")
         record = dict(zip(properties, values))
         if {"scale_0", "scale_1", "scale_2"}.issubset(record):
             scale = [math.exp(record[f"scale_{axis}"]) for axis in range(3)]

@@ -13,7 +13,7 @@ Inspect Gaussian PLY scenes for giant primitives, duplicates, low opacity, float
 - Real ASCII PLY parser with standard log-scale and opacity handling
 - Robust scene-center, median-scale, MAD floater, duplicate, bounds, and metadata checks
 - Projected scene preview with flagged primitives
-- CLI, JSON API, responsive workbench, Docker, tests, and CI
+- CLI, JSON API, responsive workbench, Docker, tests
 
 ## Run it end to end
 

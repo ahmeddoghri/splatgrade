@@ -1,5 +1,7 @@
 # splatgrade
 
+[![tests](https://github.com/ahmeddoghri/splatgrade/actions/workflows/tests.yml/badge.svg)](https://github.com/ahmeddoghri/splatgrade/actions/workflows/tests.yml) [![case study](https://img.shields.io/badge/case%20study-adoghri.com-e0703e)](https://adoghri.com/project-60.html)
+
 **3D Gaussian Splat artifact quality gate.**
 
 Inspect Gaussian PLY scenes for giant primitives, duplicates, low opacity, floaters, invalid ranges, and unstable bounds.

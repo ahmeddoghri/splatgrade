@@ -58,6 +58,24 @@ complete-row control and a demo-output regression check; the published
 demo numbers (quality 49, grade D, 2 giant/3 duplicate pairs/4 low-opacity/2
 floaters) are unaffected.
 
+## It could not open a real splat file
+
+The parser accepted `format ascii 1.0` and rejected everything else with a
+clear error, which is tidy and useless: Inria's exporter, nerfstudio, and
+the viewers that read them all write `binary_little_endian`. A gate that
+cannot open a single scene produced by an actual splatting pipeline is not a
+gate.
+
+Binary little- and big-endian PLY are now supported, with the full scalar
+type table rather than an assumption that everything is a float.
+`tests/fixtures` holds the same 36-Gaussian scene written both ways, with a
+realistic 3DGS property layout (`nx/ny/nz`, `f_dc_*`, `opacity`, `scale_*`,
+`rot_*`), and the test asserts they grade **identically: D, score 49, the
+same two giant primitives.**
+
+Truncation is rejected rather than quietly producing a short scene, and an
+unsupported property type is named in the error instead of guessed at.
+
 ## Scope
 
 Primitive-level preflight catches structural artifacts. Final perceptual quality still requires rendered multi-view inspection against capture references.
